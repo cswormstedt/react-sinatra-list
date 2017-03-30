@@ -6,7 +6,12 @@ var FormComponent = React.createClass({
   },
   handleClick: function(event){
     event.preventDefault();
+
     this.props.onItemSubmit(this.state.inputValue)
+
+    var state = this.state;
+    state.inputValue = '';
+    this.setState(state)
   },
   render: function(){
     return(
